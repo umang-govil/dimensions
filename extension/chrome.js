@@ -58,8 +58,8 @@ var dimensions = {
     this.onBrowserDisconnectClosure = this.onBrowserDisconnect.bind(this);
     this.receiveBrowserMessageClosure = this.receiveBrowserMessage.bind(this);
 
-    chrome.tabs.insertCSS(this.tab.id, { file: 'tooltip.css' });
-    chrome.tabs.executeScript(this.tab.id, { file: 'tooltip.chrome.js' });
+    chrome.tabs.insertCSS(this.tab.id, { file: 'tooltip.css', allFrames: true });
+    chrome.tabs.executeScript(this.tab.id, { file: 'tooltip.chrome.js', allFrames: true });
     chrome.browserAction.setIcon({ 
       tabId: this.tab.id,
       path: {
